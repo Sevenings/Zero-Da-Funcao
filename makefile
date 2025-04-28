@@ -10,7 +10,7 @@ run:
 	python main.py
 
 test:
-	python -m unittest tests/metodo.py
+	python -m unittest tests.ui
 
 update_dep:
 	pip freeze > requirements.txt

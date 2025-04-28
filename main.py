@@ -1,25 +1,28 @@
-from sympy import symbols, lambdify
-from sympy.parsing.sympy_parser import parse_expr
-
-def function_parsing(funcao_string):
-    # 1) Defina a variável simbólica
-    x = symbols('x')
-
-    # 2) Faça o parsing da string para um objeto Sympy Expr
-    expr = parse_expr(funcao_string, evaluate=True)
-
-    # 3) Opcional: veja o resultado
-    print(expr)   # → sin(x) + x**2
-
-    # 4) Transforme em função numérica (usando, por exemplo, numpy por baixo)
-    f = lambdify(x, expr, modules=['numpy'])
-
-    return f
+from zero_da_funcao import UI
+from zero_da_funcao import processar
 
 
+if __name__ == '__main__':
+    ui = UI()
+    argumentos = ui.run() # argumentos em dicionário
+                          # argumentos = {
+                          #   'funcao'
+                          #   'tolerancia'
+                          #   'metodos'
+                          # }
 
-funcao_string = input("Função: ")
+    resultados = processar(**argumentos) # resultados: uma lista do processamento por cada método
+                                         # resultados = [
+                                         #   {
+                                         #     'metodo'
+                                         #     'raiz'
+                                         #     'iteracoes'
+                                         #     'etapas': []
+                                         #   }
+                                         # ]
 
-f = function_parsing(funcao_string)
+    ui.mostrar_resultados(resultados)
+    for r in resultados:
+        gerar_excel(**r)
 
-print(f(1), f(2), f(3))
+

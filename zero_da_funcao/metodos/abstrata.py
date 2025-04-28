@@ -3,9 +3,11 @@ from abc import ABC, abstractmethod
 
 class MetodoEncontrarRaiz(ABC):
 
-    @abstractmethod
     def calcular(self, funcao, tolerancia) -> float:
-        pass
+        if not self.condicoes(funcao):
+            raise Exception("Condição inválida")
+
+        return self._calcular_raiz(funcao, tolerancia)
 
     @abstractmethod
     def condicoes(self, funcao) -> bool:

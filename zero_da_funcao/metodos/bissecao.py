@@ -1,13 +1,7 @@
-from zero_da_funcao.metodo_encontrar_raiz import MetodoEncontrarRaiz
+from zero_da_funcao.metodos.abstrata import MetodoEncontrarRaiz
 
 class MetodoDaBissecao(MetodoEncontrarRaiz):
     
-    def calcular(self, funcao, tolerancia) -> float:
-        if not self.condicoes(funcao):
-            raise Exception
-
-        return self._calcular_raiz(funcao, tolerancia)
-
     def condicoes(self, funcao) -> bool:
         return True
 
