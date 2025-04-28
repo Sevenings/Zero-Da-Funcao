@@ -9,6 +9,9 @@ class MetodoEncontrarRaiz(ABC):
 
         return self._calcular_raiz(funcao, tolerancia)
 
+    def historico(self):
+        return None, None
+
     @abstractmethod
     def condicoes(self, funcao) -> bool:
         pass

@@ -1,12 +1,17 @@
 from sympy import symbols, lambdify
 from sympy.parsing.sympy_parser import parse_expr
 
-def function_parsing(funcao_string):
+from zero_da_funcao.exceptions import FormatacaoInvalidaException
+
+def parsing_funcao(funcao_string):
     # 1) Defina a variável simbólica
     x = symbols('x')
 
     # 2) Faça o parsing da string para um objeto Sympy Expr
-    expr = parse_expr(funcao_string, evaluate=True)
+    try:
+        expr = parse_expr(funcao_string, evaluate=True)
+    except:
+        raise FormatacaoInvalidaException
 
     # 3) Opcional: veja o resultado
     print(expr)   # → sin(x) + x**2

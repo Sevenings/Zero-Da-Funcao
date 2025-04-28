@@ -22,7 +22,8 @@ if __name__ == '__main__':
                                          # ]
 
     ui.mostrar_resultados(resultados)
-    for r in resultados:
-        gerar_excel(**r)
+    # for r in resultados:
+    #     gerar_excel(**r)
+    # TODO: Implementar gerar excel
 
 

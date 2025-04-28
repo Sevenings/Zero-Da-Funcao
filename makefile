@@ -10,7 +10,7 @@ run:
 	python main.py
 
 test:
-	python -m unittest tests.ui
+	python -m unittest tests.processar
 
 update_dep:
 	pip freeze > requirements.txt
