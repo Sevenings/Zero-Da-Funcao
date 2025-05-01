@@ -1,7 +1,6 @@
 # Jornada ao Zero Da Funcao
-Programa que encontra as raízes de qualquer função dada por meio de métodos numéricos.
 
-**Inspiração:** https://www.youtube.com/watch?v=55VQSpnUJTg
+Programa que encontra as raízes de qualquer função dada por meio de métodos numéricos.
 
 ## Detalhes
 
@@ -40,6 +39,11 @@ Dependências:
  ```
  python main.py
  ```
+
+## Inspirações
+
+**Inspiração do nome "Jornada ao Zero da função":** https://www.youtube.com/watch?v=qIZL5qeEKj0
+**Original:** https://www.youtube.com/watch?v=v_oZ9Pe0yRg
 
 ## To-do
 
