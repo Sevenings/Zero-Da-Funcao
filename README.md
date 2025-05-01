@@ -42,8 +42,8 @@ Dependências:
 
 ## Inspirações
 
-**Inspiração do nome "Jornada ao Zero da função":** https://www.youtube.com/watch?v=qIZL5qeEKj0
-**Original:** https://www.youtube.com/watch?v=v_oZ9Pe0yRg
+- **Inspiração do nome "Jornada ao Zero da função":** https://www.youtube.com/watch?v=qIZL5qeEKj0
+- **Original:** https://www.youtube.com/watch?v=v_oZ9Pe0yRg
 
 ## To-do
 
