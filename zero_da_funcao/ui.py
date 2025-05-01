@@ -28,16 +28,27 @@ class UI:
         print("Escolha os Métodos: ")
         print("  [1] Método de Bisseção")
         print("  [2] Método do Ponto Fixo")
-        print("  [3] Método do Newton")
+        print("  [3] Método de Newton")
         print("  [4] Método da Secante")
         print("ex: 1, 3, 4")
         metodos_entrada = input("> ")
         metodos = self.interpretar_metodos_entrada(metodos_entrada)
 
+        # Buscar os parâmetros extra
+        parametros_extra = {}
+        print("Parâmetros adicionais:")
+        for metodo in metodos:
+            print(metodo.nome)
+            parametros_extra[metodo.nome] = {}
+            for parametro in metodo.parametros_extra:
+                parametros_extra[metodo.nome][parametro.get('nome')] = float(input(parametro.get('prompt')))
+
+
         return {
                 'funcao': funcao,
                 'tolerancia': tolerancia,
-                'metodos': metodos
+                'metodos': metodos,
+                'parametros_extra': parametros_extra
                 }
 
 
@@ -62,11 +73,11 @@ class UI:
         for r in resultados:
             metodo = r.get('metodo')
             raiz = r.get('raiz')
-            iteracoes = r.get('iteracoes')
-            etapas = r.get('etapas')
+            historico_x = r.get('historico_x')
+            historico_y = r.get('historico_y')
 
             print('-'*len(metodo))
             print(f"{metodo}:")
             print(f"Raíz: {raiz}")
-            print(f"Iterações: {iteracoes}")
-            print(f"Etapas: {etapas}")
+            print(f"Historico X: {historico_x}")
+            print(f"Historico Y: {historico_y}")

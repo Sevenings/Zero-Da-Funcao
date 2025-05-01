@@ -9,6 +9,7 @@ if __name__ == '__main__':
                           #   'funcao'
                           #   'tolerancia'
                           #   'metodos'
+                          #   'parametros_extra'
                           # }
 
     resultados = processar(**argumentos) # resultados: uma lista do processamento por cada método

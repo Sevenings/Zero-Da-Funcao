@@ -9,15 +9,14 @@ def parsing_funcao(funcao_string):
 
     # 2) Faça o parsing da string para um objeto Sympy Expr
     try:
-        expr = parse_expr(funcao_string, evaluate=True)
+        funcao = parse_expr(funcao_string, evaluate=True)
     except:
         raise FormatacaoInvalidaException
 
-    # 3) Opcional: veja o resultado
-    print(expr)   # → sin(x) + x**2
+    return funcao
 
-    # 4) Transforme em função numérica (usando, por exemplo, numpy por baixo)
-    f = lambdify(x, expr, modules=['numpy'])
+def converter_para_funcao_python(funcao_sympy):
+    x = symbols('x')
+    return lambdify(x, funcao_sympy, modules=['numpy'])
 
-    return f
 
